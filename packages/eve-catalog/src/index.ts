@@ -131,7 +131,7 @@ export const INTEGRATIONS: readonly IntegrationEntry[] = [
     slug: "blooio",
     name: "Blooio",
     kind: "channel",
-    tagline: "Send and receive iMessage, RCS, and SMS through Blooio.",
+    tagline: "Send and receive iMessage, RCS, SMS, and Apple Messages for Business through Blooio.",
     surfaces: { scaffoldable: false, registry: true, gallery: true },
   },
   {

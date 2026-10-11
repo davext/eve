@@ -2690,7 +2690,7 @@
       "name": "channel/blooio",
       "type": "registry:item",
       "title": "Blooio",
-      "description": "Send and receive iMessage, RCS, and SMS through Blooio, with reactions, typing indicators, read receipts, polls, groups, capability checks, and history.",
+      "description": "Send and receive iMessage, RCS, SMS, and Apple Messages for Business through Blooio, with interactive messages, reactions, typing indicators, read receipts, polls, groups, capability checks, and history.",
       "dependencies": [
         "eve-channel-blooio"
       ],

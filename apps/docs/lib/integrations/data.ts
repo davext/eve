@@ -315,7 +315,11 @@ TWILIO_AUTH_TOKEN=...      # required for inbound signature verification
       "imessage",
       "rcs",
       "sms",
+      "apple messages for business",
+      "business chat",
       "blooio",
+      "quick reply",
+      "list picker",
       "tapback",
       "typing",
       "read receipt",
@@ -336,7 +340,18 @@ import { blooioChannel } from "eve-channel-blooio";
 export default blooioChannel();
 \`\`\`
 
-Blooio is a native eve channel built on \`defineChannel\` (not a Chat SDK adapter), so eve owns session dispatch, streaming, and human-in-the-loop directly. See the [eve-channel-blooio README](https://github.com/Blooio/eve-channel-blooio#readme) for the full \`BlooioHandle\` surface: reactions, typing indicators, read receipts, polls, groups, capability checks, and history.`,
+Blooio is a native eve channel built on \`defineChannel\` (not a Chat SDK adapter), so eve owns session dispatch, streaming, and human-in-the-loop directly. One channel file serves every Blooio channel on the account: iMessage, RCS, and SMS numbers as well as Apple Messages for Business brands.
+
+For Apple Messages for Business conversations, add the bundled tool so the agent can send quick replies, list pickers, time pickers, and forms:
+
+\`\`\`ts
+// agent/tools/blooio_interactive.ts
+import { blooioInteractiveTool } from "eve-channel-blooio/tools";
+
+export default blooioInteractiveTool();
+\`\`\`
+
+See the [eve-channel-blooio README](https://github.com/Blooio/eve-channel-blooio#readme) for the full \`BlooioHandle\` surface: interactive messages, rich links, invitations, reactions, typing indicators, read receipts, polls, groups, capability checks, and history.`,
     configure: `Set \`BLOOIO_API_KEY\` (a \`bl_live_...\` key) and \`BLOOIO_WEBHOOK_SECRET\` (\`whsec_...\`), then point a Blooio webhook at \`/eve/v1/blooio\`:
 
 \`\`\`bash
@@ -346,7 +361,9 @@ curl -X POST https://api.blooio.com/v4/webhooks \\
   -d '{ "url": "https://your-app.vercel.app/eve/v1/blooio", "event_types": ["*"] }'
 \`\`\`
 
-Blooio signs every delivery with \`X-Blooio-Signature: t=<unix>,v1=<hmac_sha256>\`; the channel verifies it and rejects timestamps older than 5 minutes. Inbound media is re-hosted at servable URLs and forwarded to the model as multimodal file parts.`,
+Blooio signs every delivery with \`X-Blooio-Signature: t=<unix>,v1=<hmac_sha256>\`; the channel verifies it and rejects timestamps older than 5 minutes. Inbound media is re-hosted at servable URLs and forwarded to the model as multimodal file parts.
+
+To add Apple Messages for Business, register your brand in Apple Business Register, choose Blooio as the Messaging Service Provider, and link the Business ID under **Integrations → Apple Messages for Business** in the Blooio dashboard. Conversations then arrive on the same webhook. See [Blooio's Apple Messages for Business guide](https://docs.blooio.com/guides/apple-messages-for-business).`,
   },
   github: {
     logo: "github",

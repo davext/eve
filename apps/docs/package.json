@@ -98,7 +98,7 @@
     "chat": "4.41.0",
     "chat-adapter-sendblue": "0.2.0",
     "eve": "workspace:*",
-    "eve-channel-blooio": "0.2.0",
+    "eve-channel-blooio": "0.3.0",
     "mdast-util-mdx-jsx": "3.2.0",
     "mdast-util-to-markdown": "2.1.2",
     "postcss": "8.5.15",

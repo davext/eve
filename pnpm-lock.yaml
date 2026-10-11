@@ -560,8 +560,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/eve
       eve-channel-blooio:
-        specifier: 0.2.0
-        version: 0.2.0(ai@7.0.137(zod@4.5.4))(eve@packages+eve)
+        specifier: 0.3.0
+        version: 0.3.0(ai@7.0.137(zod@4.5.4))(eve@packages+eve)
       mdast-util-mdx-jsx:
         specifier: 3.2.0
         version: 3.2.0(supports-color@10.2.2)
@@ -10048,12 +10048,12 @@ packages:
     resolution: {integrity: sha512-aIL5Fx7mawVa300al2BnEE4iNvo1qETxLrPI/o05L7z6go7fCw1J6EQmbK4FmJ2AS7kgVF/KEZWufBfdClMcPg==}
     engines: {node: '>= 0.6'}
 
-  eve-channel-blooio@0.2.0:
-    resolution: {integrity: sha512-YO8EicgbW8BqYNDQCjYo+1HS64tajjYEJKtbLQvzFIj7v1zPms7zNzDHsol+EO2FF1kyzujeugtx4qHhO7O+Sg==}
+  eve-channel-blooio@0.3.0:
+    resolution: {integrity: sha512-q0CMjPgEvS0rNH+NjuENUNOXS70FqLTDQtWbo0Lwh7IOnnkS7iyGHXfNZAlaVHmhwdZQ4zuX1wtYtBD58jsBMA==}
     engines: {node: '>=20'}
     peerDependencies:
-      ai: '>=7.0.0-beta.178'
-      eve: '>=0.11.0'
+      ai: '>=7.0.0'
+      eve: '>=0.43.0'
 
   eve@0.65.0:
     resolution: {integrity: sha512-16dcyvpucnMp6f1TKZROvRrDAYWIlV7ulZfEMK+IuK1AVXMQPoLLOrGuLT/qI1TjIkxZt9g1JcXXOv/uu3yjdQ==}
@@ -24588,7 +24588,7 @@ snapshots:
 
   etag@1.8.1: {}
 
-  eve-channel-blooio@0.2.0(ai@7.0.137(zod@4.5.4))(eve@packages+eve):
+  eve-channel-blooio@0.3.0(ai@7.0.137(zod@4.5.4))(eve@packages+eve):
     dependencies:
       ai: 7.0.137(zod@4.5.4)
       eve: link:packages/eve

@@ -85,5 +85,6 @@ minimumReleaseAgeExclude:
   - "@chat-adapter/x@4.41.0"
   - "@shadcn/registry@0.1.3"
   - "@stripe/link-integrations-eve@0.2.0"
+  - "eve-channel-blooio@0.3.0"
   - "@stripe/link-sdk@0.9.0"
   - "chat@4.41.0"
